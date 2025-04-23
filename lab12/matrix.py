@@ -23,6 +23,19 @@ class Matrix:
         for i in result:
             print(str(i))
         return result
+
+    def multiply(self, other):
+        result = []
+        for i in range(3):
+            row = []
+            for j in range(3):
+                sum_product = 0
+                for k in range(3):
+                    sum_product += self.data[i][k] * other.data[k][j]
+                row.append(sum_product)
+            result.append(row)
+        return Matrix(result)
+        
 m1=[]
 m2=[]
 print("for matrix 1")
